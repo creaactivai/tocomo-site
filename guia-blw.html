@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Free BLW First Foods Guide &mdash; Tocomo</title>
+    <meta name="description" content="Download the free Baby Led Weaning guide: 20 first foods, safe cuts by age, anti-choking guide, and a complete first month meal plan for babies 6-12 months.">
+    <meta property="og:title" content="Free BLW First Foods Guide &mdash; Tocomo">
+    <meta property="og:description" content="Everything you need to start BLW safely. 20 first foods, age-based cuts, safety guide, and weekly meal plan. 100% free.">
+    <meta property="og:image" content="https://tocomo.co/assets/hero-logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tocomo.co/guia-blw">
+    <meta name="theme-color" content="#FFF3ED">
+
+    <!-- Favicon + Icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tocomoapp">
+    <meta name="twitter:title" content="Free BLW First Foods Guide &mdash; Tocomo">
+    <meta name="twitter:description" content="20 first foods, age-based cuts, safety tips, and a weekly meal plan. Free.">
+    <meta name="twitter:image" content="https://tocomo.co/assets/hero-logo.png">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Tocomo LLC">
+    <meta name="keywords" content="BLW guide, BLW guide PDF, baby led weaning guide, baby led weaning first foods, BLW recipes 6 months, how to start BLW, first foods baby, BLW cutting guide, baby choking BLW, BLW meal plan, baby led weaning en espanol">
+    <link rel="canonical" href="https://tocomo.co/guia-blw">
+    <meta name="language" content="en">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Free BLW First Foods Guide",
+        "description": "Download the free Baby Led Weaning guide with 20 first foods, safe age-based cuts, and a weekly meal plan.",
+        "url": "https://tocomo.co/guia-blw",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tocomo",
+            "url": "https://tocomo.co"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free BLW first foods guide with 20 foods, cutting guides, and meal plan"
+        }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FFF3ED;
+            color: #2D3436;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ── Top bar ── */
+        .top-bar {
+            width: 100%;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .top-bar a {
+            text-decoration: none;
+            color: #2D3436;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .top-bar .back-link {
+            color: #8FB996;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            max-width: 640px;
+            width: 100%;
+            padding: 40px 24px 20px;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #B4E7CE, #8FB996);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #2D3436;
+        }
+        .hero h1 span {
+            color: #8FB996;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #636e72;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        /* ── Benefits grid ── */
+        .benefits {
+            max-width: 640px;
+            width: 100%;
+            padding: 0 24px 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .benefit-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 16px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .benefit-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .benefit-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #2D3436;
+            margin-bottom: 4px;
+        }
+        .benefit-desc {
+            font-size: 0.82rem;
+            color: #636e72;
+            line-height: 1.4;
+        }
+
+        /* ── Form section ── */
+        .form-section {
+            max-width: 640px;
+            width: 100%;
+            padding: 24px;
+        }
+        .form-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .form-card h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .form-card p {
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-bottom: 20px;
+        }
+        .email-input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .email-input-group input {
+            flex: 1;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .email-input-group input:focus {
+            border-color: #8FB996;
+        }
+        .email-input-group button {
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #B4E7CE, #8FB996);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .email-input-group button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(143,185,150,0.4);
+        }
+        .form-note {
+            font-size: 0.8rem;
+            color: #b2bec3;
+        }
+        .social-proof {
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-top: 16px;
+        }
+
+        /* ── What's inside ── */
+        .whats-inside {
+            max-width: 640px;
+            width: 100%;
+            padding: 32px 24px;
+        }
+        .whats-inside h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .inside-list {
+            list-style: none;
+        }
+        .inside-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .inside-list li:last-child {
+            border-bottom: none;
+        }
+        .inside-check {
+            color: #8FB996;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .inside-text strong {
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+        .inside-text span {
+            font-size: 0.85rem;
+            color: #636e72;
+        }
+
+        /* ── FAQ ── */
+        .faq {
+            max-width: 640px;
+            width: 100%;
+            padding: 16px 24px 40px;
+        }
+        .faq h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+        }
+        .faq-q {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 0.88rem;
+            color: #636e72;
+            line-height: 1.5;
+        }
+
+        /* ── Footer ── */
+        .lp-footer {
+            width: 100%;
+            text-align: center;
+            padding: 24px;
+            font-size: 0.8rem;
+            color: #b2bec3;
+        }
+        .lp-footer a {
+            color: #8FB996;
+            text-decoration: none;
+        }
+
+        /* ── Mobile responsive ── */
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.6rem; }
+            .benefits { grid-template-columns: 1fr; }
+            .email-input-group { flex-direction: column; }
+            .email-input-group button { width: 100%; }
+        }
+    </style>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="/">Tocomo</a>
+        <a href="/" class="back-link">&larr; Volver al inicio</a>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-badge">Gratis</div>
+        <h1>Gu&iacute;a de <span>Primeros Alimentos</span> BLW</h1>
+        <p>Todo lo que necesitas para empezar Baby Led Weaning con seguridad. Descarga nuestra gu&iacute;a completa + recibe recetas semanales, tips de seguridad y trucos de otras mam&aacute;s.</p>
+    </div>
+
+    <!-- Benefits grid -->
+    <div class="benefits">
+        <div class="benefit-card">
+            <span class="benefit-icon">&#x1F951;</span>
+            <div class="benefit-title">20 Primeros Alimentos</div>
+            <div class="benefit-desc">Los mejores alimentos para iniciar BLW con fotos y preparaci&oacute;n</div>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">&#x1F52A;</span>
+            <div class="benefit-title">Cortes por Edad</div>
+            <div class="benefit-desc">Gu&iacute;a visual de c&oacute;mo cortar cada alimento seg&uacute;n 6, 9 y 12 meses</div>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">&#x1F6E1;&#xFE0F;</span>
+            <div class="benefit-title">Seguridad Anti-Atragantamiento</div>
+            <div class="benefit-desc">Diferencia entre arcadas y atragantamiento + qu&eacute; hacer en cada caso</div>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">&#x1F4C5;</span>
+            <div class="benefit-title">Plan Semanal del Primer Mes</div>
+            <div class="benefit-desc">Calendario d&iacute;a a d&iacute;a de qu&eacute; ofrecer las primeras 4 semanas</div>
+        </div>
+    </div>
+
+    <!-- Signup form -->
+    <div class="form-section">
+        <div class="form-card">
+            <h2>Descarga la gu&iacute;a gratis</h2>
+            <p>Ingresa tu correo y te la enviamos al instante.</p>
+            <form id="guiaForm">
+                <div class="email-input-group">
+                    <input type="email" name="email" id="guiaEmail" placeholder="tu@correo.com" required autocomplete="email" aria-label="Correo electr&oacute;nico">
+                    <button type="submit">Quiero la gu&iacute;a</button>
+                </div>
+                <p class="form-note">100% gratis. Cancela cuando quieras. Sin spam.</p>
+            </form>
+            <p class="social-proof">&#x1F469;&#x200D;&#x1F37C; Mam&aacute;s ya reciben recetas cada lunes</p>
+        </div>
+    </div>
+
+    <!-- What's inside -->
+    <div class="whats-inside">
+        <h2>&#x1F4D6; &iquest;Qu&eacute; incluye la gu&iacute;a?</h2>
+        <ul class="inside-list">
+            <li>
+                <span class="inside-check">&#x2705;</span>
+                <div class="inside-text">
+                    <strong>Top 20 primeros alimentos BLW con fotos</strong>
+                    <span>Aguacate, banana, br&oacute;coli, zanahoria y 16 m&aacute;s con informaci&oacute;n nutricional</span>
+                </div>
+            </li>
+            <li>
+                <span class="inside-check">&#x2705;</span>
+                <div class="inside-text">
+                    <strong>Gu&iacute;a visual de cortes por edad</strong>
+                    <span>C&oacute;mo cortar cada alimento para beb&eacute;s de 6, 9 y 12 meses de forma segura</span>
+                </div>
+            </li>
+            <li>
+                <span class="inside-check">&#x2705;</span>
+                <div class="inside-text">
+                    <strong>Arcadas vs. atragantamiento: gu&iacute;a visual</strong>
+                    <span>Aprende a distinguirlos y qu&eacute; hacer en cada situaci&oacute;n con calma</span>
+                </div>
+            </li>
+            <li>
+                <span class="inside-check">&#x2705;</span>
+                <div class="inside-text">
+                    <strong>Plan semanal del primer mes completo</strong>
+                    <span>Plantilla descargable con qu&eacute; ofrecer cada d&iacute;a durante las primeras 4 semanas</span>
+                </div>
+            </li>
+            <li>
+                <span class="inside-check">&#x2705;</span>
+                <div class="inside-text">
+                    <strong>Checklist de seguridad antes de cada comida</strong>
+                    <span>Los 8 puntos que debes verificar antes de sentar a tu beb&eacute; a comer</span>
+                </div>
+            </li>
+            <li>
+                <span class="inside-check">&#x2705;</span>
+                <div class="inside-text">
+                    <strong>Recetas semanales en tu correo</strong>
+                    <span>Cada lunes recibir&aacute;s una receta nueva + tips de seguridad y trucos de otras mam&aacute;s</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+            <div class="faq-q">&iquest;A qu&eacute; edad puedo empezar BLW?</div>
+            <div class="faq-a">La mayor&iacute;a de los beb&eacute;s est&aacute;n listos alrededor de los 6 meses, cuando pueden sentarse solos y muestran inter&eacute;s por la comida. Siempre consulta con tu pediatra.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">&iquest;Es seguro BLW? Me da miedo el atragantamiento.</div>
+            <div class="faq-a">S&iacute;, cuando se hace correctamente. Las arcadas son normales y diferentes al atragantamiento. Nuestra gu&iacute;a te ense&ntilde;a a distinguirlos y a preparar los alimentos de forma segura.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">&iquest;La gu&iacute;a es realmente gratis?</div>
+            <div class="faq-a">100% gratis. Solo necesitas tu correo. Adem&aacute;s recibir&aacute;s una receta nueva cada lunes. Puedes darte de baja cuando quieras.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">&iquest;Qu&eacute; es Tocomo?</div>
+            <div class="faq-a">Tocomo es una app gratuita con m&aacute;s de 30 recetas BLW seguras, gu&iacute;as de corte por edad, planificador semanal y comunidad de mam&aacute;s. Disponible en App Store.</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="lp-footer">
+        &copy; 2026 Tocomo LLC &middot; <a href="/privacy.html">Privacidad</a> &middot; <a href="/terms.html">T&eacute;rminos</a> &middot; <a href="/">tocomo.co</a>
+    </div>
+
+    <script>
+        // Form handler — redirect to Beehiiv
+        var guiaForm = document.getElementById('guiaForm');
+        if (guiaForm) {
+            guiaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = document.getElementById('guiaEmail').value;
+                var btn = guiaForm.querySelector('button[type="submit"]');
+                btn.textContent = '...';
+                btn.disabled = true;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'sign_up', { method: 'guia_blw_landing' });
+                }
+                window.location.href = 'https://tocomo.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
+            });
+        }
+    </script>
+</body>
+</html>

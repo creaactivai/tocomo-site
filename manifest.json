@@ -1,0 +1,21 @@
+{
+    "name": "Tocomo",
+    "short_name": "Tocomo",
+    "description": "Recetas seguras para tu bebe. Baby-led weaning app.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFF3ED",
+    "theme_color": "#FFF3ED",
+    "icons": [
+        {
+            "src": "assets/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
