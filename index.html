@@ -12,6 +12,9 @@
     <meta property="og:url" content="https://tocomo.co">
     <meta name="theme-color" content="#FFF3ED">
     <meta name="apple-itunes-app" content="app-id=6758968527">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- Favicon + Icons -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -33,6 +36,8 @@
     <meta name="keywords" content="BLW, baby led weaning, BLW recipes, baby led weaning recipes, BLW app, baby food recipes, first foods baby, BLW cutting guide, baby led weaning guide, infant nutrition, BLW meal plan, baby led weaning 6 months, safe baby food, BLW first foods">
     <link rel="canonical" href="https://tocomo.co">
     <meta name="language" content="en">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -88,6 +93,17 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         :root {
@@ -445,18 +461,23 @@
         .screenshots-section .section-header p { color: var(--clay); }
         .screenshots-grid {
             display: flex;
-            justify-content: center;
-            gap: 24px;
+            gap: 16px;
             flex-wrap: nowrap;
-            padding: 0 40px;
-            max-width: 1200px;
+            padding: 0 32px;
+            max-width: 1500px;
             margin: 0 auto;
             perspective: 800px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
+        .screenshots-grid::-webkit-scrollbar { display: none; }
         .glare-card {
             position: relative;
-            width: 190px;
+            width: 140px;
             flex-shrink: 0;
+            scroll-snap-align: start;
             border-radius: 28px;
             overflow: hidden;
             cursor: pointer;
@@ -491,28 +512,6 @@
         }
         .glare-card:hover .glare-overlay {
             opacity: 1;
-        }
-        .glare-card .card-label {
-            position: absolute;
-            bottom: 0;
-            left: 0; right: 0;
-            padding: 24px 16px 16px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.6));
-            border-radius: 0 0 28px 28px;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            font-size: 13px;
-            color: rgba(255,255,255,0.9);
-            letter-spacing: 0.04em;
-            pointer-events: none;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        .glare-card:hover .card-label {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* ── Stats bar ── */
@@ -657,9 +656,9 @@
             display: flex;
             justify-content: center;
             gap: 32px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             margin: 32px auto 8px;
-            max-width: 640px;
+            max-width: 900px;
         }
         .benefit-item {
             display: flex;
@@ -679,7 +678,15 @@
             justify-content: center;
             flex-shrink: 0;
             box-shadow: 0 2px 8px rgba(139, 90, 60, 0.08);
-            font-size: 18px;
+        }
+        .benefit-item .benefit-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--terracotta);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         .lead-magnet-social-proof {
             font-family: 'Inter', sans-serif;
@@ -920,25 +927,20 @@
             }
             .screenshots-section { padding: 64px 0; }
             .screenshots-grid {
-                gap: 16px;
+                gap: 12px;
                 padding: 0 16px;
                 perspective: none;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
             }
             .glare-card {
-                width: calc(33.33% - 12px);
-                min-width: 100px;
+                width: 140px;
+                min-width: 140px;
                 border-radius: 20px;
             }
             .glare-card img { border-radius: 20px; }
             .glare-card .glare-overlay { border-radius: 20px; }
-            .glare-card .card-label {
-                border-radius: 0 0 20px 20px;
-                opacity: 1;
-                transform: translateY(0);
-                font-size: 10px;
-                padding: 12px 6px 8px;
-            }
             .stats-section { padding: 48px 24px; }
             .stats-grid { gap: 32px; flex-wrap: wrap; }
             .stat-item .number { font-size: 32px; }
@@ -947,6 +949,7 @@
             .store-badges { flex-direction: column; align-items: center; }
             .lead-magnet-benefits {
                 gap: 16px;
+                flex-wrap: wrap;
             }
             .benefit-item {
                 font-size: 13px;
@@ -1054,6 +1057,9 @@
             <span data-i18n="nav_link">Descarga la app</span><span class="arrow">&rarr;</span>
         </a>
 
+        <!-- SEO H1 (visually hidden, accessible to crawlers) -->
+        <h1 class="sr-only">Tocomo &mdash; Safe BLW Recipes &amp; Meal Plans for Your Baby</h1>
+
         <!-- Tagline (bottom-left) -->
         <div class="tagline parallax-el" id="tagline" data-depth="0.01" data-i18n="tagline">
             Como todo, crezco fuerte
@@ -1102,7 +1108,7 @@
             <div class="features-grid">
                 <div class="feature-card fade-up">
                     <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M5 12v5a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-5"/><path d="M9 2c0 1.5-1.5 2.5-1.5 4"/><path d="M12 2c0 1.5-1.5 2.5-1.5 4"/><path d="M15 2c0 1.5-1.5 2.5-1.5 4"/></svg></div>
-                    <h3 data-i18n="f1_title">43+ Recetas seguras</h3>
+                    <h3 data-i18n="f1_title">48+ Recetas seguras</h3>
                     <p data-i18n="f1_desc">Recetas aprobadas por edad con ingredientes reales. Desde los 6 meses hasta el primer a&ntilde;o y m&aacute;s all&aacute;.</p>
                 </div>
                 <div class="feature-card fade-up">
@@ -1143,29 +1149,36 @@
             </div>
             <div class="screenshots-grid fade-up">
                 <div class="glare-card">
-                    <img src="assets/screenshots/Tocomo_app_home.png" alt="Tocomo app home screen showing baby-led weaning recipes organized by age" loading="lazy">
+                    <img src="assets/screenshots/frame_1.jpg" alt="Tocomo weekly meal planner with meals planned for your baby's age" loading="lazy">
                     <div class="glare-overlay"></div>
-                    <div class="card-label" data-i18n="card1">Recetas por edad</div>
                 </div>
                 <div class="glare-card">
-                    <img src="assets/screenshots/tocomo_app_recipe.png" alt="Tocomo recipe detail with step-by-step instructions and nutritional info" loading="lazy">
+                    <img src="assets/screenshots/frame_2.jpg" alt="Tocomo ingredient tracking and food analytics for baby nutrition" loading="lazy">
                     <div class="glare-overlay"></div>
-                    <div class="card-label" data-i18n="card2">Receta paso a paso</div>
                 </div>
                 <div class="glare-card">
-                    <img src="assets/screenshots/tocomo_app_safetycuttingtips.png" alt="Tocomo age-based safety cutting guide for baby food preparation" loading="lazy">
+                    <img src="assets/screenshots/frame_3.jpg" alt="Tocomo recipe detail showing safe age-appropriate baby meals and snacks" loading="lazy">
                     <div class="glare-overlay"></div>
-                    <div class="card-label" data-i18n="card3">Cortes seguros por edad</div>
                 </div>
                 <div class="glare-card">
-                    <img src="assets/screenshots/Tocomo_app_community.png" alt="Tocomo mom community feed where parents share baby meal photos" loading="lazy">
+                    <img src="assets/screenshots/frame_4.jpg" alt="Tocomo smart shopping list for baby meal ingredients" loading="lazy">
                     <div class="glare-overlay"></div>
-                    <div class="card-label" data-i18n="card4">Nuestra Mesa</div>
                 </div>
                 <div class="glare-card">
-                    <img src="assets/screenshots/Tocomo_app_MealPlanner.png" alt="Tocomo weekly meal planner with customizable baby meal templates" loading="lazy">
+                    <img src="assets/screenshots/frame_5.jpg" alt="Tocomo one-click grocery delivery integration" loading="lazy">
                     <div class="glare-overlay"></div>
-                    <div class="card-label" data-i18n="card5">Planificador semanal</div>
+                </div>
+                <div class="glare-card">
+                    <img src="assets/screenshots/frame_6.jpg" alt="Tocomo app home screen with 30-day auto-generated meal plans for babies" loading="lazy">
+                    <div class="glare-overlay"></div>
+                </div>
+                <div class="glare-card">
+                    <img src="assets/screenshots/frame_7.jpg" alt="Tocomo community kitchen with 500+ easy nutritious baby recipes" loading="lazy">
+                    <div class="glare-overlay"></div>
+                </div>
+                <div class="glare-card">
+                    <img src="assets/screenshots/frame_8.jpg" alt="Tocomo baby profile with age-based personalization" loading="lazy">
+                    <div class="glare-overlay"></div>
                 </div>
             </div>
         </div>
@@ -1174,7 +1187,7 @@
         <div class="stats-section fade-up">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="number">43+</div>
+                    <div class="number">48+</div>
                     <div class="label" data-i18n="stat1">Recetas</div>
                 </div>
                 <div class="stat-item">
@@ -1198,24 +1211,25 @@
 
             <div class="lead-magnet-benefits fade-up">
                 <div class="benefit-item">
-                    <span class="benefit-icon">&#x1F951;</span>
+                    <span class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
                     <span data-i18n="lm_b1">20 primeros alimentos</span>
                 </div>
                 <div class="benefit-item">
-                    <span class="benefit-icon">&#x1F52A;</span>
+                    <span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M15.5 4.5L7.5 12.5l-1 5 5-1 8-8"/><path d="M14 6l3 3"/></svg></span>
                     <span data-i18n="lm_b2">Cortes por edad</span>
                 </div>
                 <div class="benefit-item">
-                    <span class="benefit-icon">&#x1F6E1;&#xFE0F;</span>
+                    <span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
                     <span data-i18n="lm_b3">Gu&iacute;a anti-atragantamiento</span>
                 </div>
                 <div class="benefit-item">
-                    <span class="benefit-icon">&#x1F4C5;</span>
+                    <span class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
                     <span data-i18n="lm_b4">Plan semanal del primer mes</span>
                 </div>
             </div>
 
-            <p class="lead-magnet-social-proof fade-up" data-i18n="lm_proof">&#x1F469;&#x200D;&#x1F37C; Mam&aacute;s ya reciben recetas cada lunes</p>
+            <p class="lead-magnet-social-proof fade-up" data-i18n="lm_proof">Mam&aacute;s ya reciben recetas cada lunes</p>
+            <p class="fade-up" style="text-align:center; margin-top:8px;"><a href="guia-blw.html" style="color:var(--terracotta); font-weight:500; text-decoration:underline;" data-i18n="lm_link">Lee la gu&iacute;a completa aqu&iacute;</a></p>
 
             <form class="email-form fade-up" id="emailForm">
                 <div class="email-input-group">
@@ -1225,7 +1239,7 @@
                 <p class="email-note" data-i18n="email_note">100% gratis. Cancela cuando quieras. Sin spam.</p>
             </form>
             <div class="email-success" id="emailSuccess" style="display:none;">
-                <p data-i18n="email_ok">&#x2705; &iexcl;Listo! Revisa tu correo — la gu&iacute;a va en camino.</p>
+                <p data-i18n="email_ok">&iexcl;Listo! Revisa tu correo &mdash; la gu&iacute;a va en camino.</p>
             </div>
         </div>
 
@@ -1233,7 +1247,6 @@
         <div class="download-section" id="download">
             <h2 class="fade-up" data-i18n="dl_title">Descarga Tocomo gratis</h2>
             <p class="fade-up" data-i18n="dl_subtitle">Comienza hoy. Tu beb&eacute; merece comer bien desde el primer bocado.</p>
-            <!-- PLACEHOLDER: Replace Google Play href="#" with real URL once published -->
             <div class="store-badges fade-up">
                 <a href="https://apps.apple.com/us/app/tocomo/id6758968527" class="store-badge" id="appStoreLink" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -1242,7 +1255,7 @@
                         <strong>App Store</strong>
                     </div>
                 </a>
-                <a href="#" class="store-badge" id="playStoreLink">
+                <a href="https://play.google.com/store/apps/details?id=com.tocomo.app" class="store-badge" id="playStoreLink" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.396 13l2.302-2.492zM5.864 2.658L16.8 9.991l-2.302 2.302L5.864 3.658z"/></svg>
                     <div class="badge-text">
                         <small data-i18n="store_avail">Disponible en</small>
@@ -1603,7 +1616,7 @@
                 scroll_text: 'Ver m\u00e1s',
                 feat_title: 'Todo lo que necesitas',
                 feat_subtitle: 'Recetas seguras, comunidad real y herramientas para que cada comida sea un paso hacia un futuro saludable.',
-                f1_title: '43+ Recetas seguras',
+                f1_title: '48+ Recetas seguras',
                 f1_desc: 'Recetas aprobadas por edad con ingredientes reales. Desde los 6 meses hasta el primer a\u00f1o y m\u00e1s all\u00e1.',
                 f2_title: 'Gu\u00edas de corte',
                 f2_desc: 'Instrucciones espec\u00edficas por edad para cortar cada alimento de forma segura. Porque la seguridad va primero.',
@@ -1617,11 +1630,6 @@
                 f6_desc: 'Disponible en dos idiomas para familias biling\u00fces. Cambia de idioma en un toque.',
                 ss_title: 'Mira la app por dentro',
                 ss_subtitle: 'Dise\u00f1ada para mam\u00e1s ocupadas. Simple, bonita y funcional.',
-                card1: 'Recetas por edad',
-                card2: 'Receta paso a paso',
-                card3: 'Cortes seguros por edad',
-                card4: 'Nuestra Mesa',
-                card5: 'Planificador semanal',
                 stat1: 'Recetas',
                 stat2: 'Meses de edad',
                 stat3: 'Gratis para empezar',
@@ -1632,10 +1640,11 @@
                 lm_b2: 'Cortes por edad',
                 lm_b3: 'Gu\u00eda anti-atragantamiento',
                 lm_b4: 'Plan semanal del primer mes',
-                lm_proof: '\ud83d\udc69\u200d\ud83c\udf7c Mam\u00e1s ya reciben recetas cada lunes',
+                lm_proof: 'Mam\u00e1s ya reciben recetas cada lunes',
+                lm_link: 'Lee la gu\u00eda completa aqu\u00ed',
                 email_btn: 'Quiero la gu\u00eda',
                 email_note: '100% gratis. Cancela cuando quieras. Sin spam.',
-                email_ok: '\u2705 \u00a1Listo! Revisa tu correo \u2014 la gu\u00eda va en camino.',
+                email_ok: '\u00a1Listo! Revisa tu correo \u2014 la gu\u00eda va en camino.',
                 dl_title: 'Descarga Tocomo gratis',
                 dl_subtitle: 'Comienza hoy. Tu beb\u00e9 merece comer bien desde el primer bocado.',
                 store_avail: 'Disponible en',
@@ -1650,7 +1659,7 @@
                 scroll_text: 'See more',
                 feat_title: 'Everything you need',
                 feat_subtitle: 'Safe recipes, real community, and tools to make every meal a step toward a healthy future.',
-                f1_title: '43+ Safe Recipes',
+                f1_title: '48+ Safe Recipes',
                 f1_desc: 'Age-approved recipes with real ingredients. From 6 months to the first year and beyond.',
                 f2_title: 'Cutting Guides',
                 f2_desc: 'Age-specific instructions for safely cutting every food. Because safety comes first.',
@@ -1664,11 +1673,6 @@
                 f6_desc: 'Available in two languages for bilingual families. Switch languages in a tap.',
                 ss_title: 'See inside the app',
                 ss_subtitle: 'Designed for busy moms. Simple, beautiful, and functional.',
-                card1: 'Recipes by age',
-                card2: 'Step-by-step recipe',
-                card3: 'Safe cuts by age',
-                card4: 'Our Table',
-                card5: 'Weekly planner',
                 stat1: 'Recipes',
                 stat2: 'Months old',
                 stat3: 'Free to start',
@@ -1679,10 +1683,11 @@
                 lm_b2: 'Cuts by age',
                 lm_b3: 'Anti-choking guide',
                 lm_b4: 'First month meal plan',
-                lm_proof: '\ud83d\udc69\u200d\ud83c\udf7c Moms already get recipes every Monday',
+                lm_proof: 'Moms already get recipes every Monday',
+                lm_link: 'Read the full guide here',
                 email_btn: 'Get the guide',
                 email_note: '100% free. Cancel anytime. No spam.',
-                email_ok: '\u2705 Done! Check your inbox \u2014 the guide is on its way.',
+                email_ok: 'Done! Check your inbox \u2014 the guide is on its way.',
                 dl_title: 'Download Tocomo free',
                 dl_subtitle: 'Start today. Your baby deserves to eat well from the very first bite.',
                 store_avail: 'Available on',

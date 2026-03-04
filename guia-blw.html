@@ -11,6 +11,9 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tocomo.co/guia-blw">
     <meta name="theme-color" content="#FFF3ED">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- Favicon + Icons -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -129,11 +132,11 @@
 
         /* ── Benefits grid ── */
         .benefits {
-            max-width: 640px;
+            max-width: 960px;
             width: 100%;
             padding: 0 24px 24px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 12px;
         }
         .benefit-card {
@@ -144,9 +147,23 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
         .benefit-icon {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 10px;
+            background: linear-gradient(135deg, #FFF3ED, #FFEADB);
+            border-radius: 14px;
+        }
+        .benefit-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #C17B5E;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         .benefit-title {
             font-weight: 700;
@@ -254,10 +271,24 @@
             border-bottom: none;
         }
         .inside-check {
-            color: #8FB996;
-            font-size: 1.2rem;
-            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background: linear-gradient(135deg, #B4E7CE, #8FB996);
+            border-radius: 50%;
             margin-top: 2px;
+        }
+        .inside-check svg {
+            width: 14px;
+            height: 14px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         .inside-text strong {
             display: block;
@@ -313,6 +344,9 @@
         }
 
         /* ── Mobile responsive ── */
+        @media (max-width: 768px) {
+            .benefits { grid-template-columns: 1fr 1fr; }
+        }
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.6rem; }
             .benefits { grid-template-columns: 1fr; }
@@ -322,12 +356,12 @@
     </style>
 
     <!-- GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL7WMSK464"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-GL7WMSK464');
     </script>
 </head>
 <body>
@@ -348,22 +382,22 @@
     <!-- Benefits grid -->
     <div class="benefits">
         <div class="benefit-card">
-            <span class="benefit-icon">&#x1F951;</span>
+            <span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke-dasharray="0"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="10" r="0.5" fill="#C17B5E" stroke="none"/><circle cx="15" cy="10" r="0.5" fill="#C17B5E" stroke="none"/><path d="M15 2c0 4-3 4-3 8"/></svg></span>
             <div class="benefit-title">20 Primeros Alimentos</div>
             <div class="benefit-desc">Los mejores alimentos para iniciar BLW con fotos y preparaci&oacute;n</div>
         </div>
         <div class="benefit-card">
-            <span class="benefit-icon">&#x1F52A;</span>
+            <span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M15.5 4.5L7.5 12.5l-1 5 5-1 8-8"/><path d="M14 6l3 3"/></svg></span>
             <div class="benefit-title">Cortes por Edad</div>
             <div class="benefit-desc">Gu&iacute;a visual de c&oacute;mo cortar cada alimento seg&uacute;n 6, 9 y 12 meses</div>
         </div>
         <div class="benefit-card">
-            <span class="benefit-icon">&#x1F6E1;&#xFE0F;</span>
+            <span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
             <div class="benefit-title">Seguridad Anti-Atragantamiento</div>
             <div class="benefit-desc">Diferencia entre arcadas y atragantamiento + qu&eacute; hacer en cada caso</div>
         </div>
         <div class="benefit-card">
-            <span class="benefit-icon">&#x1F4C5;</span>
+            <span class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></span>
             <div class="benefit-title">Plan Semanal del Primer Mes</div>
             <div class="benefit-desc">Calendario d&iacute;a a d&iacute;a de qu&eacute; ofrecer las primeras 4 semanas</div>
         </div>
@@ -381,51 +415,51 @@
                 </div>
                 <p class="form-note">100% gratis. Cancela cuando quieras. Sin spam.</p>
             </form>
-            <p class="social-proof">&#x1F469;&#x200D;&#x1F37C; Mam&aacute;s ya reciben recetas cada lunes</p>
+            <p class="social-proof">Mam&aacute;s ya reciben recetas cada lunes</p>
         </div>
     </div>
 
     <!-- What's inside -->
     <div class="whats-inside">
-        <h2>&#x1F4D6; &iquest;Qu&eacute; incluye la gu&iacute;a?</h2>
+        <h2>&iquest;Qu&eacute; incluye la gu&iacute;a?</h2>
         <ul class="inside-list">
             <li>
-                <span class="inside-check">&#x2705;</span>
+                <span class="inside-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <div class="inside-text">
                     <strong>Top 20 primeros alimentos BLW con fotos</strong>
                     <span>Aguacate, banana, br&oacute;coli, zanahoria y 16 m&aacute;s con informaci&oacute;n nutricional</span>
                 </div>
             </li>
             <li>
-                <span class="inside-check">&#x2705;</span>
+                <span class="inside-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <div class="inside-text">
                     <strong>Gu&iacute;a visual de cortes por edad</strong>
                     <span>C&oacute;mo cortar cada alimento para beb&eacute;s de 6, 9 y 12 meses de forma segura</span>
                 </div>
             </li>
             <li>
-                <span class="inside-check">&#x2705;</span>
+                <span class="inside-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <div class="inside-text">
                     <strong>Arcadas vs. atragantamiento: gu&iacute;a visual</strong>
                     <span>Aprende a distinguirlos y qu&eacute; hacer en cada situaci&oacute;n con calma</span>
                 </div>
             </li>
             <li>
-                <span class="inside-check">&#x2705;</span>
+                <span class="inside-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <div class="inside-text">
                     <strong>Plan semanal del primer mes completo</strong>
                     <span>Plantilla descargable con qu&eacute; ofrecer cada d&iacute;a durante las primeras 4 semanas</span>
                 </div>
             </li>
             <li>
-                <span class="inside-check">&#x2705;</span>
+                <span class="inside-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <div class="inside-text">
                     <strong>Checklist de seguridad antes de cada comida</strong>
                     <span>Los 8 puntos que debes verificar antes de sentar a tu beb&eacute; a comer</span>
                 </div>
             </li>
             <li>
-                <span class="inside-check">&#x2705;</span>
+                <span class="inside-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <div class="inside-text">
                     <strong>Recetas semanales en tu correo</strong>
                     <span>Cada lunes recibir&aacute;s una receta nueva + tips de seguridad y trucos de otras mam&aacute;s</span>

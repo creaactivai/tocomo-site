@@ -1,0 +1,35 @@
+# Tocomo
+
+> Safe baby-led weaning (BLW) recipes, meal plans, and guides for babies 6-12+ months. Free app for iOS and Android.
+
+Tocomo is a mobile app designed for parents starting baby-led weaning. It provides 48+ age-appropriate recipes with step-by-step instructions, safety cutting guides by age, a weekly meal planner with auto-generated templates, a smart shopping list, ingredient tracking analytics, and a community kitchen where moms share their baby's meals.
+
+## Key Features
+
+- **48+ Safe Recipes**: Age-approved BLW recipes with real ingredients, from 6 months to 12+ months
+- **Cutting Guides**: Age-specific instructions for safely cutting every food for babies
+- **Weekly Meal Planner**: 30-day auto-generated meal plans with customizable templates, up to 5 meals per day
+- **Smart Shopping List**: Auto-generated ingredient list from meal plans with one-click grocery delivery via Instacart
+- **Ingredient Analytics**: Track food groups, top ingredients, and nutritional variety over time
+- **Food Log**: Daily food diary to track what your baby eats
+- **Community Kitchen**: Share baby meal photos, follow other moms, and get inspired
+- **Bilingual**: Available in English and Spanish
+
+## Links
+
+- Website: https://tocomo.co
+- App Store (iOS): https://apps.apple.com/app/id6758968527
+- Google Play (Android): Coming soon
+- Free BLW Guide: https://tocomo.co/guia-blw
+- Privacy Policy: https://tocomo.co/privacy.html
+- Terms of Service: https://tocomo.co/terms.html
+- Instagram: https://instagram.com/tocomoapp
+- TikTok: https://tiktok.com/@tocomoapp
+
+## About
+
+Tocomo is built by Tocomo LLC (Creaactiva.co). The app is free to download with a freemium model offering 5 free recipes and full access via premium subscription.
+
+## Contact
+
+Email: hello@tocomo.co
