@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Tocomo homepage wireframe, option A: plan to cart</title>
+<style>
+:root{--ink:#1b1b1b;--ink2:#474747;--ink3:#6b6b6b;--line:#d4d4d4;--fill:#ececec;--fill2:#f6f6f6;--bg:#fff;
+--acc:#B85A3F;--acc-tint:#f7ece8;--r:16px;--r-sm:10px;--max:1120px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
+body.lang-es .en,body:not(.lang-es) .es{display:none!important}
+a{color:inherit}
+.ic{width:22px;height:22px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.sm{width:16px;height:16px}.ic.lg{width:28px;height:28px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:72px 0;border-top:1px solid var(--fill)}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.08;letter-spacing:-.02em;font-weight:750}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.015em;font-weight:720;margin-bottom:12px}
+h3{font-size:18px;line-height:1.3;font-weight:650}
+.lede{font-size:18px;color:var(--ink2);max-width:640px}
+.kicker{font-size:13px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+.muted{color:var(--ink3)}.small{font-size:14px}.xs{font-size:12px}
+.center{text-align:center}.center .lede{margin:0 auto}
+/* wireframe chrome */
+.wfbar{background:#111;color:#eee;font-size:13px;padding:8px 20px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.wfbar b{color:#fff}
+.wfbar button{background:#333;color:#fff;border:1px solid #555;border-radius:6px;padding:4px 10px;font:inherit;cursor:pointer}
+.wf{display:flex;gap:8px;align-items:flex-start;font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;background:#fffbe6;border:1px dashed #b9a84a;color:#5b4f12;padding:8px 10px;border-radius:8px;margin:14px 0;max-width:720px}
+.center .wf{margin-left:auto;margin-right:auto;text-align:left}
+body.hide-notes .wf{display:none}
+.ph{background:repeating-linear-gradient(45deg,var(--fill2),var(--fill2) 10px,var(--fill) 10px,var(--fill) 20px);border:1px dashed #bdbdbd;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:var(--ink3);font-size:13px;text-align:center;padding:12px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--fill)}
+nav.top .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:750;font-size:20px;text-decoration:none;letter-spacing:-.01em}
+.logo .ic{color:var(--acc);width:26px;height:26px}
+.navlinks{display:flex;gap:22px;margin-left:auto;font-size:15px}
+.navlinks a{text-decoration:none;color:var(--ink2)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:13px}
+.lang button{border:0;background:none;padding:5px 10px;cursor:pointer;font:inherit;font-weight:600;color:var(--ink3)}
+.lang button[aria-pressed=true]{background:var(--ink);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:10px 18px;font-weight:650;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer}
+.btn.acc{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn.ghost{border-color:transparent;padding-left:4px}
+@media (max-width:820px){.navlinks{display:none}.lang{margin-left:auto}nav .btn.navcta{display:none}}
+/* app store badge placeholder */
+.badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border-radius:12px;padding:8px 16px 8px 12px;text-decoration:none;min-height:52px}
+.badge .ic{width:28px;height:28px}
+.badge small{display:block;font-size:11px;line-height:1.1;opacity:.85}
+.badge strong{display:block;font-size:20px;line-height:1.1;font-weight:600;letter-spacing:-.01em}
+/* hero */
+.hero{padding:56px 0 64px;border-top:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;font-weight:650;color:var(--ink2);margin-bottom:18px}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:13px;font-weight:600;color:var(--ink2);background:#fff}
+.pill.acc{border-color:var(--acc);color:var(--acc);background:var(--acc-tint)}
+.ctarow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:26px 0 12px}
+.priceline{font-size:14px;color:var(--ink2);max-width:560px}
+.priceline strong{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips .pill{padding:6px 12px;font-size:14px}
+.chips .pill .ic{color:var(--acc);width:18px;height:18px}
+/* loop (plan to cart) */
+.loop{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:14px;align-items:stretch;margin-top:40px}
+.step{border:1.5px solid var(--line);border-radius:var(--r);padding:18px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.step .head{display:flex;align-items:center;gap:10px}
+.num{width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none}
+.arrow{display:flex;align-items:center;color:var(--acc)}
+.mini{border:1px solid var(--fill);border-radius:var(--r-sm);background:var(--fill2);padding:10px;font-size:13px;flex:1}
+.mini .row{display:flex;justify-content:space-between;gap:8px;padding:6px 2px;border-bottom:1px solid var(--fill)}
+.mini .row:last-child{border-bottom:0}
+.mini .day{font-weight:650;color:var(--ink3);width:38px;flex:none}
+.mini .chk{display:flex;gap:8px;align-items:center}
+.box{width:14px;height:14px;border:1.5px solid var(--ink3);border-radius:4px;flex:none}
+.cartbtn{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;background:var(--ink);color:#fff;font-weight:650;padding:11px;margin-top:8px}
+@media (max-width:820px){.loop{grid-template-columns:1fr}.arrow{justify-content:center;transform:rotate(90deg);height:28px}}
+/* loop v2: 6-step weekly loop (Oct 14 2026) */
+.loop6{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;counter-reset:none}
+.loop6 .step{position:relative}
+.loop6 .step.partial{border-style:solid}
+.loop6 .step.is-soon{border-style:dashed;background:var(--fill2)}
+.loop6 .step.is-soon .num{background:#fff;color:var(--acc);border:1.5px dashed var(--acc)}
+.loop6 .status{align-self:flex-start}
+.loop6 .mini .ico-row{display:flex;gap:8px;align-items:flex-start;padding:6px 2px;border-bottom:1px solid var(--fill)}
+.loop6 .mini .ico-row:last-child{border-bottom:0}
+.loop6 .mini .ico-row .ic{width:18px;height:18px;color:var(--acc);margin-top:1px}
+.loop6 .box.on{background:var(--ink3);position:relative}
+.loop6 .box.on::after{content:"";position:absolute;left:3px;top:0;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.loop6 .strike{text-decoration:line-through;color:var(--ink3)}
+.loop6 .loopback{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--ink3);font-size:13px}
+.loop6 .loopback .ic{color:var(--acc)}
+@media (max-width:820px){.loop6{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;gap:12px;margin-left:-20px;margin-right:-20px;padding:0 20px 10px}.loop6 .step{flex:0 0 82%;scroll-snap-align:start}.loop6 .loopback{display:none}}
+/* phone mock */
+.phone{width:290px;max-width:100%;border:2px solid var(--ink);border-radius:36px;padding:12px;background:#fff;margin:0 auto}
+.screen{border-radius:26px;background:var(--fill2);padding:14px;min-height:520px;display:flex;flex-direction:column;gap:10px;font-size:13px}
+.notch{width:90px;height:18px;border-radius:12px;background:var(--ink);margin:0 auto 6px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.card .thumb{height:84px;border-radius:9px}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:650;border-radius:999px;padding:2px 8px;background:var(--fill);color:var(--ink2)}
+.tag.warn{background:var(--acc-tint);color:var(--acc)}
+.serve{border-left:3px solid var(--acc);padding:4px 0 4px 8px;color:var(--ink2)}
+.herogrid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media (max-width:900px){.herogrid{grid-template-columns:1fr;gap:36px}}
+/* how it works list */
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;counter-reset:s}
+.steps4 li{list-style:none;border-top:2px solid var(--ink);padding-top:14px}
+.steps4 li .num{margin-bottom:10px}
+.steps4 p{color:var(--ink2);font-size:15px;margin-top:6px}
+@media (max-width:820px){.steps4{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps4{grid-template-columns:1fr}}
+/* features */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.fcard{border:1.5px solid var(--line);border-radius:var(--r);padding:20px;background:#fff}
+.fcard .ico{width:44px;height:44px;border-radius:12px;background:var(--fill2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.fcard.hero-f{border-color:var(--acc)}
+.fcard.hero-f .ico{background:var(--acc-tint);color:var(--acc)}
+.fcard p{color:var(--ink2);font-size:15px;margin-top:6px}
+.fcard .fine{font-size:12px;color:var(--ink3);margin-top:10px}
+.soon{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.soon .fcard{border-style:dashed;background:var(--fill2);display:flex;gap:14px;align-items:flex-start}
+.soon .fcard .ico{margin:0;background:#fff}
+@media (max-width:820px){.feat{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.feat,.soon{grid-template-columns:1fr}}
+/* screenshots */
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.shots .ph{aspect-ratio:9/19.5;border-radius:22px}
+@media (max-width:820px){.shots{grid-template-columns:repeat(4,70%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.shots>*{scroll-snap-align:start}}
+/* founder */
+.founder{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;border:1.5px solid var(--line);border-radius:var(--r);padding:28px;margin-top:8px}
+.founder .ph{aspect-ratio:1;border-radius:50%}
+.founder .ph.story{aspect-ratio:auto;border-radius:var(--r-sm);min-height:120px;margin:12px 0}
+@media (max-width:700px){.founder{grid-template-columns:1fr}.founder>.ph{width:140px}}
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.qcard{border:1.5px dashed #bdbdbd;border-radius:var(--r);padding:20px;background:var(--fill2);display:flex;flex-direction:column;gap:12px;min-height:180px}
+.qcard .ic{color:var(--ink3)}
+.qcard .q{font-size:17px;font-weight:600;color:var(--ink3);flex:1}
+.rating{display:flex;align-items:center;gap:12px;margin-top:16px;border:1.5px dashed #bdbdbd;border-radius:var(--r);padding:14px 18px;color:var(--ink3);font-size:14px}
+@media (max-width:820px){.proof{grid-template-columns:1fr}}
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;align-items:stretch}
+.plan{border:1.5px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px;background:#fff;position:relative}
+.plan.best{border:2px solid var(--acc)}
+.plan .flag{position:absolute;top:-12px;left:20px;background:var(--acc);color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px}
+.price{font-size:38px;font-weight:750;letter-spacing:-.02em;line-height:1}
+.price span{font-size:15px;font-weight:500;color:var(--ink3);letter-spacing:0}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:15px;flex:1}
+.plan li{display:flex;gap:9px;align-items:flex-start}
+.plan li .ic{width:18px;height:18px;margin-top:2px}
+.plan li.yes .ic{color:var(--acc)}
+.plan li.no{color:var(--ink3)}
+.plan .btn{justify-content:center}
+.boundary{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:14px;color:var(--ink2);max-width:760px}
+@media (max-width:900px){.plans{grid-template-columns:1fr}}
+/* faq */
+.faq{max-width:780px;margin-top:24px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:650;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{transition:transform .2s ease-out}
+.faq details[open] summary .ic{transform:rotate(180deg)}
+.faq details p{color:var(--ink2);margin-top:10px;font-size:15px}
+.faq details p+p{margin-top:8px}
+/* final cta */
+.final{background:var(--fill2);text-align:center}
+.final h2{max-width:720px;margin:0 auto 12px}
+.final .ctarow{justify-content:center}
+footer{padding:36px 0 110px;font-size:13px;color:var(--ink3);border-top:1px solid var(--fill)}
+footer .wrap{display:flex;flex-direction:column;gap:12px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+@media (min-width:821px){footer{padding-bottom:36px}}
+/* sticky mobile cta */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:none;align-items:center;gap:12px;justify-content:space-between}
+.sticky .btn{flex:1;justify-content:center}
+@media (max-width:820px){.sticky{display:flex}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"/><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"/><path d="M8 11v-4a4 4 0 1 1 8 0v4"/></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6l6 -6"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/></symbol><symbol id="i-list-check" viewBox="0 0 24 24"><path d="M3.5 5.5l1.5 1.5l2.5 -2.5"/><path d="M3.5 11.5l1.5 1.5l2.5 -2.5"/><path d="M3.5 17.5l1.5 1.5l2.5 -2.5"/><path d="M11 6l9 0"/><path d="M11 12l9 0"/><path d="M11 18l9 0"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 17h-11v-14h-2"/><path d="M6 5l14 1l-1 7h-13"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 9v4"/><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"/><path d="M12 16h.01"/></symbol><symbol id="i-language" viewBox="0 0 24 24"><path d="M4 5h7"/><path d="M9 3v2c0 4.418 -2.239 8 -5 8"/><path d="M5 9c0 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4 -9l4 9"/><path d="M19.1 18h-6.2"/></symbol><symbol id="i-knife" viewBox="0 0 24 24"><path d="M19 3v12h-5c-.023 -3.681 .184 -7.406 5 -12z"/><path d="M19 15v6h-1v-3"/><path d="M8 4v17"/><path d="M5 4v3a3 3 0 1 0 6 0v-3"/></symbol><symbol id="i-seedling" viewBox="0 0 24 24"><path d="M12 10a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3"/><path d="M12 14a6 6 0 0 1 6 -6h3v1a6 6 0 0 1 -6 6h-3"/><path d="M12 20l0 -10"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></symbol><symbol id="i-quote" viewBox="0 0 24 24"><path d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"/><path d="M19 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"/></symbol><symbol id="i-apple" viewBox="0 0 24 24"><path d="M8.286 7.008c-3.216 0 -4.286 3.23 -4.286 5.92c0 3.229 2.143 8.072 4.286 8.072c1.165 -.05 1.799 -.538 3.214 -.538c1.406 0 1.607 .538 3.214 .538s4.286 -3.229 4.286 -5.381c-.03 -.011 -2.649 -.434 -2.679 -3.23c-.02 -2.335 2.589 -3.179 2.679 -3.228c-1.096 -1.606 -3.162 -2.113 -3.75 -2.153c-1.535 -.12 -3.032 1.077 -3.75 1.077c-.729 0 -2.036 -1.077 -3.214 -1.077z"/><path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></symbol><symbol id="i-photo" viewBox="0 0 24 24"><path d="M15 8h.01"/><path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z"/><path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5"/><path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"/><path d="M12 12l8 -4.5"/><path d="M12 12l0 9"/><path d="M12 12l-8 -4.5"/></symbol><symbol id="i-fridge" viewBox="0 0 24 24"><path d="M5 5a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"/><path d="M5 10h14"/><path d="M9 13v3"/><path d="M9 6v1"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6l0 13"/><path d="M12 6l0 13"/><path d="M21 6l0 13"/></symbol><symbol id="i-info-circle" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 9h.01"/><path d="M11 12h1v4h1"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></symbol><symbol id="i-baby" viewBox="0 0 24 24"><path d="M9 16c.69 .58 1.5 1 3 1s2.31 -.42 3 -1"/><path d="M10 11h.01"/><path d="M14 11h.01"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 3a2 2 0 0 0 0 4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5l0 14"/><path d="M5 12l14 0"/></symbol><symbol id="i-chef-hat" viewBox="0 0 24 24"><path d="M12 3c1.918 0 3.52 1.35 3.91 3.151a4 4 0 0 1 2.09 7.723l0 7.126h-12v-7.126a4 4 0 1 1 2.092 -7.723a4 4 0 0 1 3.908 -3.151z"/><path d="M6.161 17.009l11.839 -.009"/></symbol><symbol id="i-ruler" viewBox="0 0 24 24"><path d="M17 3l4 4l-14 14l-4 -4z"/><path d="M16 7l-1.5 -1.5"/><path d="M13 10l-1.5 -1.5"/><path d="M10 13l-1.5 -1.5"/><path d="M7 16l-1.5 -1.5"/></symbol><symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 13v-7.5a1.5 1.5 0 0 1 3 0v6.5"/><path d="M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5"/><path d="M14 5.5a1.5 1.5 0 0 1 3 0v6.5"/><path d="M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7a69.74 69.74 0 0 1 -.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></symbol><symbol id="i-bell" viewBox="0 0 24 24"><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"/><path d="M9 17v1a3 3 0 0 0 6 0v-1"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4"/><path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"/></symbol></svg>
+<div class="wfbar"><span><b>WIREFRAME</b> Opción A, el loop plan, lista, carrito como héroe. Gris más un acento (terracota del tallo). No es diseño final.</span><button id="toggleNotes" type="button">Ocultar notas</button></div><nav class="top"><div class="wrap">
+<a class="logo" href="#"><svg class="ic" aria-hidden="true"><use href="#i-seedling"/></svg>Tocomo</a>
+<div class="navlinks"><a href="#how"><span class="en">How it works</span><span class="es">Cómo funciona</span></a><a href="#features"><span class="en">Features</span><span class="es">Funciones</span></a><a href="#pricing"><span class="en">Pricing</span><span class="es">Precios</span></a><a href="#faq">FAQ</a></div>
+<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div>
+<a class="btn acc navcta" href="#get"><span class="en">Get the app</span><span class="es">Descarga la app</span></a>
+</div></nav>
+<header class="hero"><div class="wrap">
+<div class="eyebrow"><span class="en">Baby food planner for starting solids</span><span class="es">Planificador de comidas para bebés que empiezan sólidos</span><span class="pill acc"><span class="en">6 to 10 months</span><span class="es">6 a 10 meses</span></span></div>
+<h1><span class="en">Plan your baby's week and order every ingredient in one tap.</span><span class="es">Planea la semana de tu bebé y pide todos los ingredientes con un toque.</span></h1>
+<p class="lede" style="margin-top:18px"><span class="en">48 baby-led weaning recipes with a cutting guide by age and allergen flags. Tocomo turns your week into a shopping list and sends it to Instacart.</span><span class="es">48 recetas de BLW con guía de corte por edad y alertas de alérgenos. Tocomo convierte tu semana en una lista de compras y la envía a Instacart.</span></p>
+<div class="ctarow"><a class="badge" href="https://apps.apple.com/us/app/tocomo/id6758968527"><svg class="ic" aria-hidden="true"><use href="#i-apple"/></svg><span><small><span class="en">Download on the</span><span class="es">Descárgalo en el</span></small><strong>App Store</strong></span></a><a class="btn ghost" href="#how"><span class="en">See how it works</span><span class="es">Mira cómo funciona</span></a></div>
+<p class="priceline"><span class="en"><strong>Free to start</strong> with 7 recipes. On iPhone, in English and Spanish.</span><span class="es"><strong>Gratis para empezar</strong> con 7 recetas. En iPhone, en inglés y español.</span></p>
+<ol class="loop6" aria-label="The weekly loop: plan, list, order, cook, kitchen, next week">
+<li class="step"><div class="head"><span class="num">1</span><h3><span class="en">Plan the week</span><span class="es">Planea la semana</span></h3></div>
+<p class="small muted"><span class="en">Recipes picked for your baby's age, for a week or a whole month.</span><span class="es">Recetas elegidas para la edad de tu bebé, por semana o por mes completo.</span></p>
+<div class="mini">
+<div class="row"><span class="day"><span class="en">Mon</span><span class="es">Lun</span></span><span><span class="en">Spinach &amp; Banana Waffles</span><span class="es">Waffles de Espinaca y Banana</span></span></div>
+<div class="row"><span class="day"><span class="en">Tue</span><span class="es">Mar</span></span><span><span class="en">Creamy Butternut Soup with Chicken</span><span class="es">Sopa Cremosa de Calabaza con Pollo</span></span></div>
+<div class="row"><span class="day"><span class="en">Wed</span><span class="es">Mié</span></span><span><span class="en">Coconut Oil Glazed Carrots</span><span class="es">Zanahoria Glaseada con Aceite de Coco</span></span></div>
+<div class="row muted"><span class="day"><span class="en">Thu</span><span class="es">Jue</span></span><span>+ 4 <span class="en">more days</span><span class="es">días más</span></span></div>
+</div></li>
+<li class="step"><div class="head"><span class="num">2</span><h3><span class="en">The list writes itself</span><span class="es">La lista se arma sola</span></h3></div>
+<p class="small muted"><span class="en">One line per ingredient, with every recipe that uses it. No repeats.</span><span class="es">Una línea por ingrediente, con las recetas que lo usan. Sin repetidos.</span></p>
+<div class="mini">
+<div class="row"><span class="chk"><span class="box"></span><span class="en">Coconut oil</span><span class="es">Aceite de coco</span></span><span class="muted"><span class="en">1 tbsp + 2 tsp</span><span class="es">1 cda + 2 cdtas</span></span></div>
+<div class="row xs muted" style="border-bottom:1px solid var(--fill)"><span><span class="en">For: Spinach &amp; Banana Waffles, Cinnamon Roasted Pear, Coconut Oil Glazed Carrots</span><span class="es">Para: Waffles de Espinaca y Banana, Pera Asada con Canela, Zanahoria Glaseada con Aceite de Coco</span></span></div>
+<div class="row"><span class="chk"><span class="box"></span><span class="en">Ripe banana</span><span class="es">Banana madura</span></span><span class="muted">1</span></div>
+<div class="row"><span class="chk"><span class="box"></span><span class="en">Eggs</span><span class="es">Huevos</span></span><span class="muted">2</span></div>
+</div></li>
+<li class="step"><div class="head"><span class="num">3</span><h3><span class="en">Order in one tap</span><span class="es">Pide con un toque</span></h3></div>
+<p class="small muted"><span class="en">Send the whole list to Instacart and check out there. Or take it to the store.</span><span class="es">Envía la lista completa a Instacart y paga allí. O llévala al súper.</span></p>
+<div class="mini" style="display:flex;flex-direction:column;justify-content:center">
+<div class="cartbtn"><svg class="ic sm" aria-hidden="true"><use href="#i-cart"/></svg><span class="en">Order on Instacart</span><span class="es">Pedir en Instacart</span></div>
+<p class="xs muted center" style="margin-top:8px"><span class="en">Where Instacart delivers</span><span class="es">Donde Instacart entrega</span></p>
+</div></li>
+<li class="step"><div class="head"><span class="num">4</span><h3><span class="en">Cook it</span><span class="es">Cocínalo</span></h3></div>
+<p class="small muted"><span class="en">Step by step, with how to cut and serve it at your baby's age.</span><span class="es">Paso a paso, con cómo cortarlo y servirlo a la edad de tu bebé.</span></p>
+<div class="mini">
+<div class="ico-row"><svg class="ic" aria-hidden="true"><use href="#i-knife"/></svg><span><strong><span class="en">9 to 12 months</span><span class="es">9 a 12 meses</span></strong></span></div>
+<div class="ico-row"><svg class="ic" aria-hidden="true"><use href="#i-ruler"/></svg><span><span class="en">Cut in 5x2 cm strips</span><span class="es">Cortar en tiras de 5x2 cm</span></span></div>
+<div class="ico-row"><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg><span><span class="en">Grab and bite</span><span class="es">Agarra y muerde</span></span></div>
+<div class="ico-row"><svg class="ic" aria-hidden="true"><use href="#i-baby"/></svg><span><span class="en">Soft texture for gums</span><span class="es">Textura suave para encías</span></span></div>
+</div></li>
+<li class="step partial"><div class="head"><span class="num">5</span><h3><span class="en">Your kitchen remembers</span><span class="es">Tu cocina recuerda</span></h3></div>
+<p class="small muted"><span class="en">Mark what's at home. Next week's cart skips it.</span><span class="es">Marca lo que tienes en casa. El carrito de la próxima semana lo salta.</span></p>
+<div class="mini">
+<div class="row"><span class="chk"><span class="box on"></span><span class="en">Coconut oil</span><span class="es">Aceite de coco</span></span><span class="muted xs"><span class="en">At home</span><span class="es">En casa</span></span></div>
+<div class="row"><span class="chk"><span class="box on"></span><span class="en">Cinnamon</span><span class="es">Canela</span></span><span class="muted xs"><span class="en">At home</span><span class="es">En casa</span></span></div>
+<div class="row"><span class="chk"><span class="box"></span><span class="en">Ripe banana</span><span class="es">Banana madura</span></span><span class="muted xs"><span class="en">To buy</span><span class="es">Por comprar</span></span></div>
+</div></li>
+<li class="step"><div class="head"><span class="num">6</span><h3><span class="en">Then the week starts again</span><span class="es">Y la semana empieza otra vez</span></h3></div>
+<p class="small muted"><span class="en">Plan, list, order, cook. Every week.</span><span class="es">Planea, lista, pide, cocina. Cada semana.</span></p>
+<div class="mini">
+<div class="ico-row"><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg><span><strong><span class="en">Week 2</span><span class="es">Semana 2</span></strong></span></div>
+<div class="ico-row"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg><span><span class="en">New plan</span><span class="es">Nuevo plan</span></span></div>
+<div class="ico-row"><svg class="ic" aria-hidden="true"><use href="#i-list-check"/></svg><span><span class="en">New list</span><span class="es">Nueva lista</span></span></div>
+<div class="ico-row"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg><span><span class="en">To Instacart</span><span class="es">A Instacart</span></span></div>
+</div></li>
+</ol>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>Arriba del pliegue en 375px: categoría, titular, App Store y "gratis para empezar" (el precio vive en Pricing, decisión Lysa 14 oct). El loop es el diferenciador (ningún competidor lo tiene). Recetas e ingredientes del mock son reales (R003, R004, R006, R011; corte de R004 tal cual en el JSON).</span></aside>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>CAMBIO 14 oct 2026 (decisión de Hermes): el héroe ya no es solo "pedir", es el loop semanal completo. Pasa de 3 a 6 pasos: grilla 3x2 en escritorio, carrusel horizontal con snap en móvil (tarjeta al 82% para que asome la siguiente). Estados honestos: 1 a 4 existen (1 y 2 son Premium; la lista sin repetidos sale en 1.3.6, no publicar antes). 5: la despensa es una lista manual; lo marcado sigue en la lista y se excluye del carrito que va a Instacart (shopping_list_screen.dart _cartItems), por eso dice "carrito". 6 (revisión Lysa 14 oct): ya no promete nada nuevo, es la vuelta del loop. Sin "Próximamente" en ningún lado.</span></aside>
+</div></header>
+<section class="chipsband" style="padding:28px 0"><div class="wrap"><div class="chips">
+<span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><span class="en">48 recipes</span><span class="es">48 recetas</span></span>
+<span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-knife"/></svg><span class="en">Cutting guide by age</span><span class="es">Guía de corte por edad</span></span>
+<span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><span class="en">Allergen flags</span><span class="es">Alertas de alérgenos</span></span>
+<span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg><span class="en">Your list to Instacart in one tap</span><span class="es">Tu lista a Instacart con un toque</span></span>
+<span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-language"/></svg><span class="en">English and Spanish</span><span class="es">Inglés y español</span></span>
+</div></div></section>
+<section id="how"><div class="wrap">
+<p class="kicker"><span class="en">How it works</span><span class="es">Cómo funciona</span></p>
+<h2><span class="en">From first bite to a full cart</span><span class="es">Del primer bocado al carrito lleno</span></h2>
+<p class="lede"><span class="en">Set it up once. Tocomo does the planning and the list every week.</span><span class="es">Lo configuras una vez. Tocomo hace el plan y la lista cada semana.</span></p>
+<ol class="steps4">
+<li><span class="num">1</span><h3><span class="en">Tell us about your baby</span><span class="es">Cuéntanos de tu bebé</span></h3><p><span class="en">Add their birthday and the common allergens you're watching.</span><span class="es">Agrega su fecha de nacimiento y los alérgenos comunes que estás cuidando.</span></p></li>
+<li><span class="num">2</span><h3><span class="en">Get the week planned</span><span class="es">Recibe la semana planeada</span></h3><p><span class="en">Tocomo fills a week or a month with recipes for their age. Add or remove any meal.</span><span class="es">Tocomo llena una semana o un mes con recetas para su edad. Agrega o quita las comidas que quieras.</span></p></li>
+<li><span class="num">3</span><h3><span class="en">Cook with confidence</span><span class="es">Cocina con tranquilidad</span></h3><p><span class="en">Each recipe shows how to cut and serve it at their age, and flags recipes tagged with the allergens you marked.</span><span class="es">Cada receta te dice cómo cortarla y servirla a su edad, y marca las recetas que tienen los alérgenos que elegiste.</span></p></li>
+<li><span class="num">4</span><h3><span class="en">Shop in one tap</span><span class="es">Compra con un toque</span></h3><p><span class="en">Your shopping list is ready. Send it to Instacart, or take it with you.</span><span class="es">Tu lista de compras está lista. Envíala a Instacart o llévala contigo.</span></p></li>
+</ol>
+</div></section>
+<section id="features"><div class="wrap">
+<p class="kicker"><span class="en">Features</span><span class="es">Funciones</span></p>
+<h2><span class="en">Built for the busy week, not just the first bite</span><span class="es">Hecho para la semana ocupada, no solo para el primer bocado</span></h2>
+<p class="lede"><span class="en">Everything that gets food from the plan to your baby's plate.</span><span class="es">Todo lo que lleva la comida del plan al plato de tu bebé.</span></p>
+<div class="feat"><div class="fcard hero-f"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg></div><h3><span class="en">Weekly or monthly planner</span><span class="es">Planificador semanal o mensual</span></h3><p><span class="en">Pick a week or a whole month. Tocomo fills it with recipes that fit your baby's age.</span><span class="es">Elige una semana o un mes completo. Tocomo lo llena con recetas para la edad de tu bebé.</span></p></div><div class="fcard hero-f"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-list-check"/></svg></div><h3><span class="en">A shopping list that builds itself</span><span class="es">Una lista de compras que se arma sola</span></h3><p><span class="en">Every ingredient from your plan, in one list. Nothing to copy by hand.</span><span class="es">Todos los ingredientes de tu plan en una sola lista. Nada que copiar a mano.</span></p></div><div class="fcard hero-f"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg></div><h3><span class="en">Your list to Instacart in one tap</span><span class="es">Tu lista a Instacart con un toque</span></h3><p><span class="en">Send the whole list to Instacart and check out there. Available where Instacart delivers.</span><span class="es">Envía la lista completa a Instacart y paga allí. Disponible donde Instacart entrega.</span></p><p class="fine"><span class="en">You pay Instacart for groceries and fees. Links may earn Tocomo a small commission at no extra cost to you.</span><span class="es">Los víveres y tarifas se pagan a Instacart. Los enlaces pueden generar una pequeña comisión para Tocomo sin costo extra para ti.</span></p></div><div class="fcard"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg></div><h3><span class="en">Allergen flags</span><span class="es">Alertas de alérgenos</span></h3><p><span class="en">Mark any of 6 common allergens: dairy, egg, gluten, fish, tree nuts and sesame. Recipes tagged with them are flagged before you cook.</span><span class="es">Marca cualquiera de 6 alérgenos comunes: lácteos, huevo, gluten, pescado, frutos secos y sésamo. Las recetas que los tienen quedan marcadas antes de cocinar.</span></p></div><div class="fcard"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-knife"/></svg></div><h3><span class="en">How to cut it, by age</span><span class="es">Cómo cortarlo según la edad</span></h3><p><span class="en">Every recipe shows how to cut and serve it for your baby's age, in plain words and simple icons.</span><span class="es">Cada receta te dice cómo cortarla y servirla según la edad de tu bebé, con palabras claras e íconos simples.</span></p></div><div class="fcard"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-language"/></svg></div><h3><span class="en">English and Spanish</span><span class="es">Inglés y español</span></h3><p><span class="en">The whole app, recipes included, in both languages. Cook in the language you think in.</span><span class="es">Toda la app, recetas incluidas, en los dos idiomas. Cocina en el idioma en que piensas.</span></p></div></div>
+</div>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>Primera fila con borde de acento = el loop (plan, lista, Instacart). Segunda fila = seguridad y idioma. Sin tarjetas 'Próximamente' (revisión Lysa 14 oct).</span></aside>
+</div></section>
+<section id="inside"><div class="wrap">
+<p class="kicker"><span class="en">Inside the app</span><span class="es">Dentro de la app</span></p>
+<h2><span class="en">See it before you download</span><span class="es">Mírala antes de descargarla</span></h2>
+<div class="shots"><div class="ph"><svg class="ic" aria-hidden="true"><use href="#i-photo"/></svg><span><span class="en">Weekly planner</span><span class="es">Planificador semanal</span></span><span class="xs"><span class="en">Real screenshot from the app</span><span class="es">Captura real de la app</span></span></div><div class="ph"><svg class="ic" aria-hidden="true"><use href="#i-photo"/></svg><span><span class="en">Shopping list</span><span class="es">Lista de compras</span></span><span class="xs"><span class="en">Real screenshot from the app</span><span class="es">Captura real de la app</span></span></div><div class="ph"><svg class="ic" aria-hidden="true"><use href="#i-photo"/></svg><span><span class="en">Recipe with cutting guide</span><span class="es">Receta con guía de corte</span></span><span class="xs"><span class="en">Real screenshot from the app</span><span class="es">Captura real de la app</span></span></div><div class="ph"><svg class="ic" aria-hidden="true"><use href="#i-photo"/></svg><span><span class="en">Allergen flag on a recipe</span><span class="es">Alerta de alérgeno en una receta</span></span><span class="xs"><span class="en">Real screenshot from the app</span><span class="es">Captura real de la app</span></span></div></div>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>Capturas reales del build 1.3.5 en iPhone, mismo orden que el loop: plan, lista, receta, alérgeno. Sin mockups inventados. En móvil se desliza horizontal.</span></aside>
+</div></section>
+<section id="founder"><div class="wrap">
+<p class="kicker"><span class="en">Who's behind Tocomo</span><span class="es">Quién está detrás de Tocomo</span></p>
+<div class="founder">
+<div class="ph"><svg class="ic lg" aria-hidden="true"><use href="#i-user"/></svg><span><span class="en">Founder photo</span><span class="es">Foto de quien fundó</span></span></div>
+<div>
+<h2 style="margin-bottom:4px"><span class="en">Why we built Tocomo</span><span class="es">Por qué creamos Tocomo</span></h2>
+<div class="ph story"><span class="en">Founder story goes here, in their own words: who they are, the moment that started Tocomo, and why planning and shopping belong together. 60 to 90 words.</span><span class="es">Aquí va la historia de quien fundó, en sus palabras: quién es, el momento que inició Tocomo y por qué planear y comprar van juntos. 60 a 90 palabras.</span></div>
+<p class="small"><strong>[<span class="en">Founder name</span><span class="es">Nombre</span>]</strong>, <span class="en">founder of Tocomo</span><span class="es">fundador(a) de Tocomo</span></p>
+</div></div>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>Bloque obligatorio por la auditoría de HeyCatch (no hay fundador). Foto real, no stock. Nombre, cara y texto los aprueba Hermes antes de publicar.</span></aside>
+</div></section>
+<section id="proof"><div class="wrap">
+<p class="kicker"><span class="en">From parents</span><span class="es">De mamás y papás</span></p>
+<h2><span class="en">What parents say</span><span class="es">Lo que dicen las familias</span></h2>
+<div class="proof"><div class="qcard"><svg class="ic lg" aria-hidden="true"><use href="#i-quote"/></svg><p class="q"><span class="en">Real parent quote goes here</span><span class="es">Aquí va la cita real de una mamá o un papá</span></p><p class="xs">[<span class="en">First name, baby&#39;s age in months</span><span class="es">Nombre, edad del bebé en meses</span>]</p></div><div class="qcard"><svg class="ic lg" aria-hidden="true"><use href="#i-quote"/></svg><p class="q"><span class="en">Real parent quote goes here</span><span class="es">Aquí va la cita real de una mamá o un papá</span></p><p class="xs">[<span class="en">First name, baby&#39;s age in months</span><span class="es">Nombre, edad del bebé en meses</span>]</p></div><div class="qcard"><svg class="ic lg" aria-hidden="true"><use href="#i-quote"/></svg><p class="q"><span class="en">Real parent quote goes here</span><span class="es">Aquí va la cita real de una mamá o un papá</span></p><p class="xs">[<span class="en">First name, baby&#39;s age in months</span><span class="es">Nombre, edad del bebé en meses</span>]</p></div></div>
+<div class="rating"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><span><span class="en">App Store rating goes here once there are enough ratings to be meaningful.</span><span class="es">Aquí va la calificación del App Store cuando haya suficientes para que signifique algo.</span></span></div>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>Hoy hay 1 calificación y cero testimonios. Esta sección NO se publica con placeholders: se oculta hasta tener 3 citas reales con permiso escrito. Nunca nombres, estrellas ni conteos inventados.</span></aside>
+</div></section>
+<section id="pricing"><div class="wrap">
+<p class="kicker"><span class="en">Pricing</span><span class="es">Precios</span></p>
+<h2><span class="en">Free to start. Premium when you want the week handled.</span><span class="es">Gratis para empezar. Premium cuando quieras la semana resuelta.</span></h2>
+<p class="lede"><span class="en">No credit card to try the free recipes. Upgrade inside the app whenever you're ready.</span><span class="es">No necesitas tarjeta para probar las recetas gratis. Pásate a Premium dentro de la app cuando quieras.</span></p>
+<div class="plans">
+<div class="plan">
+<h3><span class="en">Free</span><span class="es">Gratis</span></h3>
+<div class="price">$0</div>
+<ul>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">7 complete recipes</span><span class="es">7 recetas completas</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Cutting guide by age on each</span><span class="es">Guía de corte por edad en cada una</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Allergen profile and recipe flags</span><span class="es">Perfil de alergias y alertas en recetas</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Order a single recipe on Instacart</span><span class="es">Pedir una receta en Instacart</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">English and Spanish</span><span class="es">Inglés y español</span></span></li>
+<li class="no"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span><span class="en">The other 41 recipes</span><span class="es">Las otras 41 recetas</span></span></li>
+<li class="no"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span><span class="en">Weekly and monthly planner</span><span class="es">Planificador semanal y mensual</span></span></li>
+<li class="no"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span><span class="en">Shopping list and full list to Instacart</span><span class="es">Lista de compras y lista completa a Instacart</span></span></li>
+</ul>
+<a class="btn" href="#get"><span class="en">Start free</span><span class="es">Empieza gratis</span></a>
+</div>
+<div class="plan best">
+<span class="flag"><span class="en">7 days free</span><span class="es">7 días gratis</span></span>
+<h3><span class="en">Premium yearly</span><span class="es">Premium anual</span></h3>
+<div class="price">$39.99 <span><span class="en">a year</span><span class="es">al año</span></span></div>
+<p class="small muted"><span class="en">About $3.33 a month. Save 52% compared with monthly.</span><span class="es">Unos $3.33 al mes. Ahorras 52% frente al mensual.</span></p>
+<ul>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Everything in Free</span><span class="es">Todo lo de Gratis</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">All 48 recipes</span><span class="es">Las 48 recetas</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Weekly or monthly planner</span><span class="es">Planificador semanal o mensual</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Automatic shopping list</span><span class="es">Lista de compras automática</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Whole list to Instacart in one tap</span><span class="es">Lista completa a Instacart con un toque</span></span></li>
+</ul>
+<a class="btn acc" href="#get"><span class="en">Try 7 days free</span><span class="es">Prueba 7 días gratis</span></a>
+</div>
+<div class="plan">
+<h3><span class="en">Premium monthly</span><span class="es">Premium mensual</span></h3>
+<div class="price">$6.99 <span><span class="en">a month</span><span class="es">al mes</span></span></div>
+<p class="small muted"><span class="en">No free trial on the monthly plan.</span><span class="es">El plan mensual no tiene prueba gratis.</span></p>
+<ul>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Everything in Premium yearly</span><span class="es">Todo lo de Premium anual</span></span></li>
+<li class="yes"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><span class="en">Pay month to month</span><span class="es">Pagas mes a mes</span></span></li>
+</ul>
+<a class="btn" href="#get"><span class="en">Choose monthly</span><span class="es">Elegir mensual</span></a>
+</div>
+</div>
+<p class="boundary"><svg class="ic" aria-hidden="true"><use href="#i-info-circle"/></svg><span><span class="en">Prices in US dollars on the US App Store. Billed by Apple to your Apple ID. Renews automatically unless canceled at least 24 hours before the period ends. Cancel any time in your iPhone Settings.</span><span class="es">Precios en dólares en el App Store de EE. UU. Apple cobra a tu Apple ID. Se renueva sola salvo que canceles al menos 24 horas antes de que termine el periodo. Cancela cuando quieras en Ajustes de tu iPhone.</span></span></p>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>Frontera gratis/pago verificada en código (PurchaseService): gratis = 7 recetas; planificador y lista = Premium. El botón Instacart de una receta sí funciona en recetas gratis. Ahorro 52% = 39.99 contra 12 × 6.99. Sin comparación con Solid Starts aquí: el precio es apoyo, no titular.</span></aside>
+</div></section>
+<section id="faq"><div class="wrap">
+<p class="kicker">FAQ</p>
+<h2><span class="en">Questions parents ask</span><span class="es">Preguntas frecuentes</span></h2>
+<div class="faq">
+<details><summary><span class="en">Is Tocomo medical advice?</span><span class="es">¿Tocomo es consejo médico?</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p><span class="en">No. Tocomo is a meal planning and recipe app, not a medical service, and it doesn't replace your pediatrician. Every baby is different. Talk to your pediatrician about when to start solids, choking, allergies and anything about your baby's health.</span><span class="es">No. Tocomo es una app de recetas y planeación de comidas, no un servicio médico, y no reemplaza a tu pediatra. Cada bebé es distinto. Habla con tu pediatra sobre cuándo empezar sólidos, atragantamiento, alergias y cualquier tema de salud de tu bebé.</span></p></details>
+<details><summary><span class="en">What's free?</span><span class="es">¿Qué es gratis?</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p><span class="en">7 complete recipes, each with its cutting guide by age and allergen flags, in English and Spanish. You can also order a single recipe's ingredients on Instacart.</span><span class="es">7 recetas completas, cada una con su guía de corte por edad y alertas de alérgenos, en inglés y español. También puedes pedir en Instacart los ingredientes de una receta.</span></p><p><span class="en">The other 41 recipes, the weekly and monthly planner, the automatic shopping list and sending the whole list to Instacart are part of Premium.</span><span class="es">Las otras 41 recetas, el planificador semanal y mensual, la lista de compras automática y enviar la lista completa a Instacart son parte de Premium.</span></p></details>
+<details><summary><span class="en">How does the free trial work? When am I charged?</span><span class="es">¿Cómo funciona la prueba gratis? ¿Cuándo me cobran?</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p><span class="en">The 7-day free trial comes with the yearly plan. You won't be charged during those 7 days. If you cancel before the trial ends, you pay nothing. If you keep it, Apple charges $39.99 for the year.</span><span class="es">La prueba de 7 días gratis viene con el plan anual. No se te cobra nada durante esos 7 días. Si cancelas antes de que termine, no pagas nada. Si te quedas, Apple te cobra $39.99 por el año.</span></p><p><span class="en">Subscriptions renew automatically unless you cancel at least 24 hours before the period ends. To cancel, open Settings on your iPhone, tap your name, then Subscriptions. The monthly plan is $6.99 a month and has no free trial.</span><span class="es">Las suscripciones se renuevan solas salvo que canceles al menos 24 horas antes de que termine el periodo. Para cancelar, abre Ajustes en tu iPhone, toca tu nombre y luego Suscripciones. El plan mensual cuesta $6.99 al mes y no tiene prueba gratis.</span></p></details>
+<details><summary><span class="en">My baby has a food allergy. Can Tocomo help?</span><span class="es">Mi bebé tiene una alergia alimentaria. ¿Tocomo me ayuda?</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p><span class="en">Tocomo lets you mark 6 common allergens and flags the recipes tagged with them, so you can skip or swap them. Always read the ingredient list and product labels yourself.</span><span class="es">Tocomo te deja marcar 6 alérgenos comunes y señala las recetas que los tienen, para que las saltes o las cambies. Lee siempre la lista de ingredientes y las etiquetas.</span></p><p><span class="en">Tocomo doesn't diagnose or treat allergies and isn't a substitute for your pediatrician or allergist. If your baby has a known or suspected allergy, follow their plan for introducing foods.</span><span class="es">Tocomo no diagnostica ni trata alergias y no reemplaza a tu pediatra o alergólogo. Si tu bebé tiene una alergia conocida o sospechada, sigue el plan que te den para introducir alimentos.</span></p></details>
+<details><summary><span class="en">Do I need Instacart?</span><span class="es">¿Necesito Instacart?</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p><span class="en">No. The shopping list works on its own, so you can take it to any store. If you use Instacart, one tap sends your ingredients there and you check out in Instacart. Availability, prices and fees depend on your area and store.</span><span class="es">No. La lista de compras funciona sola y la puedes llevar a cualquier tienda. Si usas Instacart, un toque envía tus ingredientes y pagas en Instacart. La disponibilidad, los precios y las tarifas dependen de tu zona y tu tienda.</span></p></details>
+<details><summary><span class="en">What ages is Tocomo for?</span><span class="es">¿Para qué edades es Tocomo?</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p><span class="en">Babies starting solids, from 6 to 10 months. Each recipe also shows how to serve it as your baby grows.</span><span class="es">Bebés que empiezan sólidos, de 6 a 10 meses. Cada receta también te dice cómo servirla a medida que tu bebé crece.</span></p></details>
+<details><summary><span class="en">Is Tocomo on Android?</span><span class="es">¿Tocomo está en Android?</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p><span class="en">Not yet. Tocomo is available on the App Store for iOS.</span><span class="es">Todavía no. Tocomo está disponible en el App Store para iOS.</span></p></details>
+</div>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>Respuestas de alergias y médica sin promesa clínica: no hay equipo clínico, nunca 'aprobado por pediatras'. Lysa revisa el tono final de estas dos.</span></aside>
+</div></section>
+<section class="final" id="get"><div class="wrap">
+<h2><span class="en">Plan the week. Skip the store.</span><span class="es">Planea la semana. Olvídate del súper.</span></h2>
+<p class="lede"><span class="en">Free to start with 7 recipes. Premium with 7 days free on the yearly plan.</span><span class="es">Gratis para empezar con 7 recetas. Premium con 7 días gratis en el plan anual.</span></p>
+<div class="ctarow"><a class="badge" href="https://apps.apple.com/us/app/tocomo/id6758968527"><svg class="ic" aria-hidden="true"><use href="#i-apple"/></svg><span><small><span class="en">Download on the</span><span class="es">Descárgalo en el</span></small><strong>App Store</strong></span></a></div>
+<p class="xs muted"><span class="en">Available on iOS. English and Spanish.</span><span class="es">Disponible en iOS. En inglés y español.</span></p>
+<aside class="wf"><svg class="ic sm" aria-hidden="true"><use href="#i-info-circle"/></svg><span>Reemplazar este badge por el oficial de Apple (Marketing Resources), sin modificarlo. Sin badge de Google Play: Android no es público.</span></aside>
+</div></section>
+<footer><div class="wrap">
+<div class="links"><a href="../guia-blw.html"><span class="en">BLW guide</span><span class="es">Guía BLW</span></a><a href="../privacy.html"><span class="en">Privacy</span><span class="es">Privacidad</span></a><a href="../terms.html"><span class="en">Terms</span><span class="es">Términos</span></a><a href="mailto:hello@tocomo.co">hello@tocomo.co</a></div>
+<p><span class="en">Tocomo is not medical advice. Talk to your pediatrician about your baby's health, allergies and when to start solids.</span><span class="es">Tocomo no es consejo médico. Habla con tu pediatra sobre la salud de tu bebé, las alergias y cuándo empezar sólidos.</span></p>
+<p>&copy; 2026 Tocomo</p>
+</div></footer>
+<div class="sticky"><a class="btn acc" href="#get"><svg class="ic sm" aria-hidden="true"><use href="#i-apple"/></svg><span class="en">Get Tocomo free on iOS</span><span class="es">Descarga Tocomo gratis en iOS</span></a></div>
+<script>
+(function(){
+  var b=document.body;
+  function setLang(l){b.classList.toggle('lang-es',l==='es');document.documentElement.lang=l;
+    document.querySelectorAll('[data-lang]').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.lang===l)});}
+  document.querySelectorAll('[data-lang]').forEach(function(x){x.addEventListener('click',function(){setLang(x.dataset.lang)})});
+  var n=document.getElementById('toggleNotes');
+  n.addEventListener('click',function(){b.classList.toggle('hide-notes');n.textContent=b.classList.contains('hide-notes')?'Mostrar notas':'Ocultar notas'});
+  setLang('en');
+})();
+</script>
+</body></html>
